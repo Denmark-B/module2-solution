@@ -1,0 +1,87 @@
+/* Basic reset and box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fafafa;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+.row {
+  width: 100%;
+}
+
+/* ===== Section Styling ===== */
+.menu-section {
+  position: relative;
+  background-color: #e6e6e6;
+  border: 1px solid black;
+  padding: 40px 20px 20px 20px; /* pushes text below title */
+  margin: 10px;
+}
+
+/* Section title in top right corner */
+.menu-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+/* Individual colors for each section title */
+.chicken {
+  background-color: #f6cfcf; /* light red */
+}
+
+.beef {
+  background-color: #e69999; /* darker red */
+}
+
+.sushi {
+  background-color: #f7e6a1; /* light yellow */
+}
+
+/* ====== Desktop view (≥992px) ====== */
+@media (min-width: 992px) {
+  .menu-section {
+    float: left;
+    width: 31.3%; /* 3 equal sections with margins */
+  }
+}
+
+/* ====== Tablet view (768px–991px) ====== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu-section {
+    float: left;
+  }
+
+  .menu-section:nth-child(1),
+  .menu-section:nth-child(2) {
+    width: 48%;
+  }
+
+  .menu-section:nth-child(3) {
+    width: 98%;
+  }
+}
+
+/* ====== Mobile view (≤767px) ====== */
+@media (max-width: 767px) {
+  .menu-section {
+    width: 100%;
+    float: none;
+  }
+}
