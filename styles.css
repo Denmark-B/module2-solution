@@ -1,4 +1,3 @@
-/* Basic reset and box sizing */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,82 +5,71 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
+  margin-bottom: 30px;
 }
 
 .row {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/* ===== Section Styling ===== */
-.menu-section {
-  position: relative;
-  background-color: #e6e6e6;
+/* Common box style */
+.menu-item {
+  background-color: white;
   border: 1px solid black;
-  padding: 40px 20px 20px 20px; /* pushes text below title */
   margin: 10px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Section title in top right corner */
 .menu-title {
   position: absolute;
   top: 0;
   right: 0;
-  border: 1px solid black;
-  padding: 5px 20px;
+  padding: 5px 15px;
   font-weight: bold;
-  font-size: 1.25em;
+  color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-right: none;
 }
 
-/* Individual colors for each section title */
 .chicken {
-  background-color: #f6cfcf; /* light red */
+  background-color: #d94f04;
 }
 
 .beef {
-  background-color: #e69999; /* darker red */
+  background-color: #a83232;
 }
 
 .sushi {
-  background-color: #f7e6a1; /* light yellow */
+  background-color: #e0a800;
 }
 
-/* ====== Desktop view (≥992px) ====== */
-@media (min-width: 992px) {
-  .menu-section {
-    float: left;
-    width: 31.3%; /* 3 equal sections with margins */
-  }
+/* Layout for desktop */
+.col-lg-4 {
+  width: 33.33%;
 }
 
-/* ====== Tablet view (768px–991px) ====== */
-@media (min-width: 768px) and (max-width: 991px) {
-  .menu-section {
-    float: left;
-  }
-
-  .menu-section:nth-child(1),
-  .menu-section:nth-child(2) {
-    width: 48%;
-  }
-
-  .menu-section:nth-child(3) {
-    width: 98%;
+/* Tablet */
+@media (max-width: 991px) {
+  .col-md-6 {
+    width: 50%;
   }
 }
 
-/* ====== Mobile view (≤767px) ====== */
+/* Mobile */
 @media (max-width: 767px) {
-  .menu-section {
+  .col-sm-12 {
     width: 100%;
-    float: none;
   }
 }
